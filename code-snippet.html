@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Code Snippet</title>
+    <style>
+        body {
+            font-family: 'Courier New', Courier, monospace;
+            margin: 20px;
+        }
+        pre {
+            white-space: pre-wrap;       
+            white-space: -moz-pre-wrap;  
+            white-space: -pre-wrap;      
+            white-space: -o-pre-wrap;    
+            word-wrap: break-word;       
+        }
+    </style>
+</head>
+<body>
+    <pre><code>import { test, expect } from &#039;@playwright/test&#039;;
+
+test(&#039;test&#039;, async ({ page }) =&gt; {
+  await page.goto(&#039;https://100r-student.starkovgrp.ru/Client/#/&#039;); //http://localhost/Client
+  await page.getByPlaceholder(&#039;Name&#039;).click();
+  await page.getByPlaceholder(&#039;Name&#039;).fill(&#039;Administrator&#039;);
+  await page.getByPlaceholder(&#039;Password&#039;).click();
+  await page.getByPlaceholder(&#039;Password&#039;).fill(&#039;111111&#039;);
+  await page.getByPlaceholder(&#039;Password&#039;).press(&#039;Enter&#039;);
+  const page1Promise = page.waitForEvent(&#039;popup&#039;);
+  await page.getByTitle(&#039;Show help&#039;).click(); // показать справку
+  const page1 = await page1Promise;
+});
+
+
+
+
+
+</code></pre>
+</body>
+</html>

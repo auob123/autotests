@@ -1,0 +1,3 @@
+инструкции для терминала
+для посмотрение действия :   npx playwright test Framework.spec.js --project=chromium --debug
+для откервание отчета   :   npx playwright show-report
